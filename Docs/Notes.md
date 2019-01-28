@@ -62,4 +62,16 @@ since this isn't something I've ever done before.
 node_modules/
 .vscode/
 ```
+
 - **Commit frequently!!!**
+
+## Day One, Part Two: Scraping
+
+Since scraping is a completely new realm for me, I followed a tutorial for
+Puppeteer and Chrome Headless since that's what I'll be using for this project.
+You can find the tutorial [here](https://github.com/emadehsan/thal).
+
+Another site I found that was useful and interesting is an article from Hartley
+Brody's blog site:
+[I Don't Need No Stinking API: Web Scraping For Fun and Profit](https://blog.hartleybrody.com/web-scraping/).
+
