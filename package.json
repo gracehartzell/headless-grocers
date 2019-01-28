@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/gracehartzell/headless-grocers#readme",
   "dependencies": {
-    "prettier": "^1.16.1"
+    "prettier": "^1.16.1",
+    "puppeteer": "^1.11.0"
   },
   "devDependencies": {
     "eslint": "^5.3.0",
