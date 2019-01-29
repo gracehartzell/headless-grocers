@@ -25,6 +25,16 @@ async function run() {
   await page.keyboard.type(CREDS.password);
 
   await page.click(BUTTON_SELECTOR);
+  await page.waitForNavigation();
+
+  const itemToSearch = 'banana';
+  const searchURL = `https://www.instacart.com/store/h-e-b/search_v3/${itemToSearch}`;
+
+  await page.goto(searchURL);
+
+  const ADD_SELECTOR =
+    '#search_grid_a5569d1fffa3d9fa6ae1873b08eaec23-module > ul > li.item-card.in-cart > div > span > span > button';
+  await page.click(ADD_SELECTOR);
 
   // browser.close();
 }
