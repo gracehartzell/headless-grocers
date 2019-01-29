@@ -1,10 +1,10 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.7.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "headless-grocers",
+  "version": "1.0.0",
+  "description": "Taking efficient grocery shopping to the next level.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git+https://github.com/gracehartzell/headless-grocers.git"
   },
   "engines": {
     "npm": ">=5",
@@ -76,6 +76,7 @@
     "lodash": "4.17.11",
     "minimist": "1.2.0",
     "prop-types": "15.6.2",
+    "puppeteer": "^1.11.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",
     "react-helmet": "5.2.0",
