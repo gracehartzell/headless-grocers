@@ -7,4 +7,3 @@ lot of time.
 *Still in development, so don't actually do this yet...*
 - Fork and clone
 - `npm install`
-
