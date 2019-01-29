@@ -75,3 +75,19 @@ Another site I found that was useful and interesting is an article from Hartley
 Brody's blog site:
 [I Don't Need No Stinking API: Web Scraping For Fun and Profit](https://blog.hartleybrody.com/web-scraping/).
 
+### Forecasting Tricky Bits:
+
+- There are a lot of items that will appear from searches. To start out, I might
+  need to have the scraper select the first item listed.
+
+- Sites explicitly prohibiting scraping...
+  - This Whole Foods API question on `r/webdev`:
+    [here](https://www.reddit.com/r/webdev/comments/3t16ru/is_there_a_whole_foods_product_api/)
+  -
+-
+
+#### On Finding a Useable Site:
+
+- Postmates (backup). Has API and is in Austin. Mainly for restaurant delivery.
+  Fees will be much higher than ordering from another service.
+
