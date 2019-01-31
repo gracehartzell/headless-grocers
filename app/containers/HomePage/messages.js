@@ -10,6 +10,6 @@ export const scope = 'app.containers.HomePage';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'The Headless Grocer',
+    defaultMessage: "Let's Get Eating!",
   },
 });
