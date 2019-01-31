@@ -91,3 +91,14 @@ Brody's blog site:
 - Postmates (backup). Has API and is in Austin. Mainly for restaurant delivery.
   Fees will be much higher than ordering from another service.
 
+## 31 January
+
+Today's problem: Connecting the frontend to the backend. More specifically,
+triggering the scraping actions on a button click. My game plan:
+
+1. Figure out how to export an async function.
+2. Create a button component with the function file imported
+
+I'll start with getting the Yummly scrape to happen on a button click and then
+incorporate the Instacart scrape once that's complete.
+
