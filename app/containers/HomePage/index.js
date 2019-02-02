@@ -13,6 +13,7 @@ import React, { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Navbar from '../../components/Navbar';
+import YummlySearch from '../../components/YummlySearch';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
@@ -23,6 +24,7 @@ export default class HomePage extends React.PureComponent {
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
+        <YummlySearch />
       </Fragment>
     );
   }
