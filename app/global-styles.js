@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  @import url(‘https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
   html,
   body {
     height: 100%;
@@ -8,23 +10,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Roboto, sans-serif;
   }
 
-  body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  h1 {
+    font-family: Montserrat;
   }
 
   #app {
     background-color: #fafafa;
     min-height: 100%;
     min-width: 100%;
-  }
-
-  p,
-  label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
   }
 `;
 

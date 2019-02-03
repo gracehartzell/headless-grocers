@@ -1,15 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Navbar from 'react-bootstrap/Navbar';
-import Instacart from './Instacart';
-import logo from '../images/logo.png';
-
-const AppLogo = styled.img`
-  height: 50px;
-  width: 55px;
-  z-index: 99;
-  margin-right: 10px;
-`;
+import Instacart from '../Instacart/index';
+import { AppLogo } from './style/Index';
+import logo from '../../images/logo.png';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class Nav extends React.PureComponent {

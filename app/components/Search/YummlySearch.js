@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import RecipeCard from './RecipeCard';
+import SearchResults from '../Results/SearchResults';
+import { Search } from './style/Index';
 
 export default class SearchContainer extends React.PureComponent {
   constructor(props) {
@@ -24,15 +25,10 @@ export default class SearchContainer extends React.PureComponent {
   render() {
     const { recipes } = this.state;
     return (
-      <div className="recipe-search">
-        <h3>Search a Recipe</h3>
+      <Search>
         <SearchBar handleSubmit={this.handleSearch} />
-        <div>
-          {recipes.map(recipe => (
-            <RecipeCard recipe={recipe} />
-          ))}
-        </div>
-      </div>
+        <SearchResults recipes={recipes} />
+      </Search>
     );
   }
 }

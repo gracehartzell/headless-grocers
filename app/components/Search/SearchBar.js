@@ -1,10 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Input, SearchForm } from './style/Index';
 
-/* eslint-disable */
+const propTypes = {
+  handleSubmit: PropTypes.func,
+};
+
 export default class SearchBar extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { value: '' };
+    this.inputRef = React.createRef();
   }
 
   handleChange = event => {
@@ -21,18 +27,27 @@ export default class SearchBar extends React.PureComponent {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <SearchForm onSubmit={this.handleSubmit}>
         <label>
           Search Yummly Recipes:
-          <input
+          <Input
             type="text"
             value={this.state.value}
             onChange={this.handleChange}
             className="form-control"
             placeholder="e.g. tikka masala or dragonfruit"
+            ref={this.inputRef}
+            onMouseEnter={() => {
+              this.inputRef.current.focus();
+            }}
+            onMouseLeave={() => {
+              this.inputRef.current.blur();
+            }}
           />
         </label>
-      </form>
+      </SearchForm>
     );
   }
 }
+
+SearchBar.propTypes = propTypes;

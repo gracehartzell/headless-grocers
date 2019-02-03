@@ -10,10 +10,8 @@
  */
 
 import React, { Fragment } from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import Navbar from '../../components/Navbar';
-import YummlySearch from '../../components/YummlySearch';
+import Navbar from '../../components/Navbar/index';
+import YummlySearch from '../../components/Search/YummlySearch';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
@@ -21,9 +19,6 @@ export default class HomePage extends React.PureComponent {
     return (
       <Fragment>
         <Navbar />
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
         <YummlySearch />
       </Fragment>
     );
