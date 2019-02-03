@@ -1,12 +1,12 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-// import RecipeResults from './RecipeResults';
+import RecipeCard from './RecipeCard';
 
 export default class SearchContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: null,
+      recipes: [],
     };
   }
 
@@ -15,8 +15,6 @@ export default class SearchContainer extends React.PureComponent {
     fetch(url)
       .then(response => response.json())
       .then(recipes => {
-        // console.log(recipes);
-        console.log(`HERE ARE THE RECIPES: ${JSON.stringify(recipes.matches)}`);
         this.setState({
           recipes: recipes.matches,
         });
@@ -24,11 +22,16 @@ export default class SearchContainer extends React.PureComponent {
   };
 
   render() {
+    const { recipes } = this.state;
     return (
       <div className="recipe-search">
         <h3>Search a Recipe</h3>
         <SearchBar handleSubmit={this.handleSearch} />
-        {/* <RecipeResults recipes={this.state.recipes} /> */}
+        <div>
+          {recipes.map(recipe => (
+            <RecipeCard recipe={recipe} />
+          ))}
+        </div>
       </div>
     );
   }
