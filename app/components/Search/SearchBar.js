@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, SearchForm } from './style/Index';
+import { Input, SearchForm, SearchLabel } from './style/Index';
 
 const propTypes = {
   handleSubmit: PropTypes.func,
@@ -28,8 +28,8 @@ export default class SearchBar extends React.PureComponent {
   render() {
     return (
       <SearchForm onSubmit={this.handleSubmit}>
-        <label>
-          Search Yummly Recipes:
+        <SearchLabel>
+          Search Recipes
           <Input
             type="text"
             value={this.state.value}
@@ -44,7 +44,7 @@ export default class SearchBar extends React.PureComponent {
               this.inputRef.current.blur();
             }}
           />
-        </label>
+        </SearchLabel>
       </SearchForm>
     );
   }

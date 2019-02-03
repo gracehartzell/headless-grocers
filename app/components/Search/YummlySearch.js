@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from '../Results/SearchResults';
-import { Search } from './style/Index';
 
 export default class SearchContainer extends React.PureComponent {
   constructor(props) {
@@ -25,10 +24,10 @@ export default class SearchContainer extends React.PureComponent {
   render() {
     const { recipes } = this.state;
     return (
-      <Search>
+      <div>
         <SearchBar handleSubmit={this.handleSearch} />
         <SearchResults recipes={recipes} />
-      </Search>
+      </div>
     );
   }
 }

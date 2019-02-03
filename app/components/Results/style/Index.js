@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  height: 200px;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  position: relative;
+  // height: 200px;
+  width: 220px;
+  margin: 8px 8px 32px;
+  outline: 0;
+  min-height: 316px;
 `;
 
 export const RecipeImg = styled.img`
