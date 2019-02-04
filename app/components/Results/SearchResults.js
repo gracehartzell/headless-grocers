@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RecipeCard from './RecipeCard';
+import { Results } from './style/Index';
 
 const propTypes = {
   recipes: PropTypes.array,
@@ -11,11 +12,11 @@ export default class SearchResults extends React.PureComponent {
     const { recipes } = this.props;
 
     return (
-      <div>
+      <Results>
         {recipes.map(recipe => (
           <RecipeCard recipe={recipe} />
         ))}
-      </div>
+      </Results>
     );
   }
 }
