@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RecipeCard from './RecipeCard';
-import { Results } from './style/Index';
+import './style/Style.css';
 
 const propTypes = {
   recipes: PropTypes.array,
@@ -12,11 +12,11 @@ export default class SearchResults extends React.PureComponent {
     const { recipes } = this.props;
 
     return (
-      <Results>
+      <section className="cards">
         {recipes.map(recipe => (
           <RecipeCard recipe={recipe} />
         ))}
-      </Results>
+      </section>
     );
   }
 }
