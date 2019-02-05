@@ -2,10 +2,13 @@
 
 const express = require('express');
 const logger = require('./logger');
+const bodyParser = require('body-parser');
 
 const argv = require('./argv');
 const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
+const { getRecipe } = require('./scraper/yummly');
+const { addToCart } = require('./scraper/instacart');
 const isDev = process.env.NODE_ENV !== 'production';
 const ngrok =
   (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
@@ -13,8 +16,16 @@ const ngrok =
     : false;
 const { resolve } = require('path');
 const app = express();
+app.use(bodyParser.json());
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
+app.post('/add-recipe', async (req, res) => {
+  const { id } = req.body;
+  getRecipe(id);
+  const ingredientList = await getRecipe(id);
+  addToCart(ingredientList);
+  res.status('200').send('Check your cart!');
+});
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {

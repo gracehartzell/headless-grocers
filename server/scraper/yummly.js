@@ -16,7 +16,7 @@ async function getRecipe(id) {
 
   let basketFrame;
 
-  page
+  await page
     .mainFrame()
     .childFrames()
     .forEach(frame => {
@@ -25,10 +25,13 @@ async function getRecipe(id) {
       }
     });
 
+  await page.waitFor(3000);
   const ingredientList = await basketFrame.$$eval(
     'td > p:nth-child(2)',
     pElements => pElements.map(el => el.innerText),
   );
+
+  // console.log('Ingredient list leaving', ingredientList);
 
   browser.close();
   return ingredientList;

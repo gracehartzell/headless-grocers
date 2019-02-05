@@ -30,8 +30,21 @@ export default class RecipeCard extends React.PureComponent {
     if (!totalTimeInSeconds) totalTimeInSeconds = 900;
     else totalTimeInSeconds = Math.floor(totalTimeInSeconds / 60);
 
+    const postId = e => {
+      e.preventDefault();
+      fetch('/add-recipe', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ id: recipeId }),
+      }).then(result => {
+        console.log(result);
+      });
+    };
+
     return (
-      <article className="card card--1" key={id}>
+      <article className="card" key={id}>
         <div className="card__info-hover">
           <div className="card__rating-info">
             <svg className="card__rating" viewBox="0 0 24 24">
@@ -49,24 +62,37 @@ export default class RecipeCard extends React.PureComponent {
             <span className="card__time">{totalTimeInSeconds} min.</span>
           </div>
         </div>
-        <div className="img__container">
-          <div className="card__img">
-            <img
-              src={imageUrlsBySize[90]}
-              alt={recipeName}
-              className="card__img"
-            />
+
+        <a href={url} target="_blank">
+          <div className="img__container">
+            <div className="card__img">
+              <img
+                src={imageUrlsBySize[90]}
+                alt={recipeName}
+                className="card__img"
+              />
+            </div>
+            <div className="card__img--hover" />
           </div>
-          <div className="card__img--hover" />
-        </div>
+        </a>
+
         <div className="card__info">
           <span className="card__category">
             {attributes.cuisine.join(', ')}
           </span>
           <h3 className="card__title">{recipeName}</h3>
           <span className="card__by">by {sourceDisplayName}</span>
-          <a href={url}>Make</a>
         </div>
+        <form
+          action="/add-recipe"
+          method="POST"
+          className="addToCart"
+          onSubmit={postId}
+        >
+          <button type="submit" value={recipeId}>
+            Make
+          </button>
+        </form>
       </article>
     );
   }
