@@ -49,6 +49,7 @@ input your username and email.
 ## Check it out!
 
 Short and sweet frontend preview:
+<br>
 <img src="./docs/Frontend.gif">
 
 Or see the full process in action!
