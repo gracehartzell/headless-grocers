@@ -48,12 +48,16 @@ input your username and email.
 
 ## Check it out!
 
-Short and sweet frontend preview:
-<br>
+Short and sweet frontend preview: 
+<br> 
 <img src="./docs/Frontend.gif">
+
+<br>
+<br>
 
 Or see the full process in action!
 [![Watch the video](http://i3.ytimg.com/vi/GWn7cF-7_qM/maxresdefault.jpg)](https://youtu.be/GWn7cF-7_qM)
+<br> <br> <br>
 
 ## Technologies Used:
 
@@ -62,7 +66,8 @@ Or see the full process in action!
 - Chrome Headless
 - Express
 - MongoDB
-- Mac OS :wink:
+- Mac OS :wink: 
+<br> <br> <br>
 
 #### Scraping faux pas
 
