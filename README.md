@@ -50,7 +50,8 @@ input your username and email.
 
 <img src="./docs/Frontend.gif">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GWn7cF-7_qM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="https://www.youtube.com/embed/GWn7cF-7_qM" target="_blank"><img src="http://i3.ytimg.com/vi/GWn7cF-7_qM/maxresdefault.jpg" alt="Watch here!" width="240" height="180" border="10" /></a>
+[![Watch the video](http://i3.ytimg.com/vi/GWn7cF-7_qM/maxresdefault.jpg)](https://youtu.be/GWn7cF-7_qM)
 
 ## Technologies Used:
 
