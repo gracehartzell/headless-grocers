@@ -1,41 +1,42 @@
 const puppeteer = require('puppeteer');
-// const CREDS = require('./creds');
 
-async function run() {
+async function getRecipe(id) {
   const browser = await puppeteer.launch({
     headless: false,
   });
   const page = await browser.newPage();
-
-  await page.goto('https://www.yummly.com/recipe/Tahini-Sauce-1866051');
+  await page.setExtraHTTPHeaders({ Referer: 'https://www.yummly.com/' });
+  await page.goto(`https://www.yummly.com/recipe/${id}`);
 
   const SHOP_SELECTOR = '#basketfulDefaultButton';
   await page.waitForSelector(SHOP_SELECTOR);
   await page.click(SHOP_SELECTOR);
 
-  // const HEB_SELECTOR =
-  // 'button[data-selectedretailerid="a63147ae-67f4-4e71-97ce-9dff0582ef99]';
+  await page.waitFor(3000);
 
-  // await page.waitForSelector(HEB_SELECTOR);
-  // await page.click(HEB_SELECTOR);
+  let basketFrame;
 
-  const rows = await page.evaluate(() =>
-    Array.from(document.querySelectorAll('tr').innerHTML),
-  ); // returns [object Promise]
-  console.log(`HERE ARE THE ROWS: ${rows}, TYPEOF: ${typeof rows}`); // rows = object
+  await page
+    .mainFrame()
+    .childFrames()
+    .forEach(frame => {
+      if (frame.name().includes('basketful_i1')) {
+        basketFrame = frame;
+      }
+    });
 
-  rows.forEach(row => {
-    // Row is going to be a node. Specifically a tr element.
-    const children = row.childNodes;
-    if (children.length > 1) {
-      const targetTd = children && children[1];
-      const ingredient = targetTd.childNodes[1].innerText;
-      console.log(`Ingredient to be milled: ${ingredient}`);
-    }
-  });
+  await page.waitFor(3000);
+  const ingredientList = await basketFrame.$$eval(
+    'td > p:nth-child(2)',
+    pElements => pElements.map(el => el.innerText),
+  );
 
-  // browser.close();
+  // console.log('Ingredient list leaving', ingredientList);
+
+  browser.close();
+  return ingredientList;
 }
-run();
 
-// document.querySelectorAll('.jss1951 > tr > td:nth-type(2) > p');
+module.exports = {
+  getRecipe,
+};

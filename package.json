@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "chalk": "^2.4.1",
     "compression": "1.7.3",
@@ -115,6 +116,7 @@
     "babel-plugin-styled-components": "1.8.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.19",
     "circular-dependency-plugin": "5.0.2",
+    "codeceptjs": "^2.0.4",
     "compare-versions": "3.4.0",
     "compression-webpack-plugin": "2.0.0",
     "coveralls": "3.0.2",

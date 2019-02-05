@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import Instacart from '../Instacart/index';
 import { AppLogo, Title } from './style/Index';
 import logo from '../../images/logo.png';
 
@@ -13,7 +12,6 @@ export default class Nav extends React.PureComponent {
           <AppLogo src={logo} alt="logo" />
           <Title>Headless Grocers</Title>
         </Navbar.Brand>
-        <Instacart className="justify-content-end" />
       </Navbar>
     );
   }
