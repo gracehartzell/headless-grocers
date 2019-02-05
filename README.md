@@ -46,6 +46,12 @@ input your username and email.
 
 - Implementation of a Mongo database to store personal recipes is underway.
 
+## Check it out!
+
+<img src="./docs/Frontend.gif">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GWn7cF-7_qM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Technologies Used:
 
 - React Boilerplate
