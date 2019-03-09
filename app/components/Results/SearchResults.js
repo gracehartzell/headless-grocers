@@ -5,17 +5,16 @@ import './style/Style.css';
 
 const propTypes = {
   recipes: PropTypes.array,
-  id: PropTypes.string,
 };
 
 export default class SearchResults extends React.PureComponent {
   render() {
-    const { recipes, id } = this.props;
+    const { recipes } = this.props;
 
     return (
-      <section className="cards" key={id}>
+      <section className="cards">
         {recipes.map(recipe => (
-          <RecipeCard recipe={recipe} />
+          <RecipeCard recipe={recipe} key={recipe.id} />
         ))}
       </section>
     );
