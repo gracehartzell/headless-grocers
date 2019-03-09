@@ -12,9 +12,9 @@ export default class SearchResults extends React.PureComponent {
     const { recipes } = this.props;
 
     return (
-      <section className="cards" key={recipes.recipeId}>
+      <section className="cards">
         {recipes.map(recipe => (
-          <RecipeCard recipe={recipe} />
+          <RecipeCard recipe={recipe} key={recipe.id} />
         ))}
       </section>
     );

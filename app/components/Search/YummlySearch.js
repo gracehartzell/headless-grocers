@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_ID, API_KEY } from '../../../creds';
 import SearchBar from './SearchBar';
 import SearchResults from '../Results/SearchResults';
 
@@ -11,8 +12,8 @@ export default class SearchContainer extends React.PureComponent {
   }
 
   handleSearch = query => {
-    const url = `http://api.yummly.com/v1/api/recipes?_app_id=3fb6d208&_app_key=83f46937b2f86104342463b7f802ed41&q=${query}`;
-    fetch(url)
+    const URL = `http://api.yummly.com/v1/api/recipes?_app_id=${API_ID}&_app_key=${API_KEY}&q=${query}`;
+    fetch(URL)
       .then(response => response.json())
       .then(recipes => {
         this.setState({
